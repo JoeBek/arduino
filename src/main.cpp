@@ -26,25 +26,14 @@ void setup(){
 void loop(){
 
 
-  while (!Serial.available()) {
+  if (Serial.available()) {
 
-    if (signal == Signal::FLASHING){
-      flash_light(PIN);
+    command = Serial.readStringUntil('\n');
+    signal = processCommand(command)
+    Serial.println("new command is: " + command);
 
-
-
-    }
   }
-
-
-  String command = Serial.readStringUntil('\n'); 
-  Serial.println("command is: " + command);
-
   
-
-
-
-  Signal signal = processCommand(command);
 
 
 

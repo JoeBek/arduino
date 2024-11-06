@@ -16,14 +16,17 @@ enum class Signal {
 
 void flash_light(int pin_num) {
 
-  
-  digitalWrite(pin_num, HIGH);
-  delay(500);
-  digitalWrite(pin_num, LOW);
-  delay(500);
+  unsigned long currentMillis = millis();
 
-  
+  while (millis() - currentMillis < 500) {
 
+
+    
+    digitalWrite(pin_num, HIGH);
+    delay(500);
+    digitalWrite(pin_num, LOW);
+    delay(500);
+  }
 
 
 }
@@ -50,6 +53,7 @@ void toggle_light(int pin_num, bool on){
 
 Signal processCommand(String command) {
 
+  
   
   if (command == "stop") {
     
