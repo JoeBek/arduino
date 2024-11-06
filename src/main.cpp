@@ -29,7 +29,7 @@ void loop(){
   if (Serial.available()) {
 
     command = Serial.readStringUntil('\n');
-    signal = processCommand(command)
+    signal = processCommand(command);
     Serial.println("new command is: " + command);
 
   }
