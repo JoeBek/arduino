@@ -34,14 +34,11 @@ try:
         time.sleep(.4)
         # recieve messages
         
-        while cereal.in_waiting <= 0:
-            pass
-
-
-        print("receiving something ... \n")
-        line = cereal.readline().decode(encoding)
-        print(line)
-        
+        if cereal.in_waiting > 0:
+            print("receiving something ... \n")
+            line = cereal.readline().decode(encoding)
+            print(line)
+            
     
 except KeyboardInterrupt:
     pass

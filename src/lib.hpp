@@ -39,11 +39,11 @@ void toggle_light(int pin_num, bool on){
 
   if (on) {
 
-    digitalWrite(pin_num, HIGH);
+    digitalWrite(pin_num, LOW);
 
   } 
   else {
-    digitalWrite(pin_num, LOW);
+    digitalWrite(pin_num, HIGH);
 
   }
 
