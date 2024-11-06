@@ -16,6 +16,7 @@ void setup(){
   pinMode(3, OUTPUT);
 
   digitalWrite(3, HIGH);
+  digitalWrite(9, HIGH);
 
   
  
